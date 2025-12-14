@@ -25,8 +25,8 @@ public class UiManager implements ModeChangerRegistable{
         toggleExplane = new UneditableText("Toggle/Momentary");
         inputArea = new IntervalInputArea();
         toggleSwitch = new ToggleOrMomentary();
-        leftClickToggle = new AutoClickToggle();
-        rightClickToggle = new AutoClickToggle();
+        leftClickToggle = new AutoClickToggle(false);
+        rightClickToggle = new AutoClickToggle(true);
     }
 
     public static UiManager getManager(){
@@ -59,3 +59,4 @@ public class UiManager implements ModeChangerRegistable{
     }
 
 }
+
