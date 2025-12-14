@@ -1,13 +1,25 @@
 package com.app.ui;
 
 import javax.swing.JPanel;
-import java.awt.FlowLayout;
+import javax.swing.ImageIcon;
+import java.awt.Image;
+import java.awt.Graphics;
+
 
 class ImagePanel extends JPanel implements Addable{
+
+    private Image image;
+
     ImagePanel(){
         super();
         setBounds(0,150 , 240, 210);
-        setLayout(new FlowLayout());
-        setBackground(java.awt.Color.LIGHT_GRAY); 
+        setLayout(null);
+        image = new ImageIcon(getClass().getResource("/images/mouseImage.png")).getImage();
+    }
+
+    @Override
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        g.drawImage(image, 0, 0, this);
     }
 }
