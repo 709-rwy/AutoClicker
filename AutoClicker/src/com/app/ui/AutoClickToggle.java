@@ -14,8 +14,18 @@ class AutoClickToggle extends JToggleButton {
         addItemListener(this::itemStateChanged);
     }
 
+    AutoClickToggle(boolean isright){
+        this();
+        setBounds(isright ? 40 : 140, 60, 60, 30);
+    }
+
     AutoClickToggle(Consumer<Boolean> setter){
         this();
+        addSetter(setter);
+    }
+
+    AutoClickToggle(boolean isright, Consumer<Boolean> setter){
+        this(isright);
         addSetter(setter);
     }
 
@@ -30,3 +40,4 @@ class AutoClickToggle extends JToggleButton {
     }
 
 }
+
