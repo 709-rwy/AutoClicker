@@ -1,3 +1,8 @@
+/**
+ * オートクリック時、左クリック、右クリックそれぞれをクリックするかどうかを設定するボタン用のクラス
+ * 右クリック用、左クリック用にオブジェクトを生成してそれぞれに割り当てる。
+ */
+
 package com.app.ui;
 
 import java.util.function.Consumer;
@@ -8,7 +13,7 @@ class AutoClickToggle extends JToggleButton {
 
     private Consumer<Boolean> setter;
 
-    AutoClickToggle(){
+    private AutoClickToggle(){
         super();
         setText("OFF");
         addItemListener(this::itemStateChanged);
@@ -40,4 +45,3 @@ class AutoClickToggle extends JToggleButton {
     }
 
 }
-

@@ -1,3 +1,7 @@
+/**
+ * swingのオブジェクトについてadd()をまとめて行い、コードを簡略化させることを目的として作ったインターフェイス
+ */
+
 package com.app.ui;
 
 import java.awt.Component;

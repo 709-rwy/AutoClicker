@@ -1,5 +1,10 @@
+/**
+ * ui関連(swing)のオブジェクトを生成し、委譲関係を作成して連携させるためのクラス。
+ */
+
 package com.app.ui;
 
+import javax.swing.JLabel;
 import com.app.controller.*;
 
 public class UiManager implements ModeChangerRegistable{
@@ -9,8 +14,8 @@ public class UiManager implements ModeChangerRegistable{
     private AppFrame frame;
     private ControlPanel controlPanel;
     private ImagePanel imagePanel;
-    private UneditableText inputFieldExplane;
-    private UneditableText toggleExplane;
+    private JLabel inputFieldExplane;
+    private JLabel toggleExplane;
     private IntervalInputArea inputArea;
     private ToggleOrMomentary toggleSwitch;
     private AutoClickToggle leftClickToggle;
@@ -21,8 +26,8 @@ public class UiManager implements ModeChangerRegistable{
         frame = new AppFrame();
         controlPanel = new ControlPanel();
         imagePanel = new ImagePanel();
-        inputFieldExplane = new UneditableText("Interval");
-        toggleExplane = new UneditableText("Toggle/Momentary");
+        inputFieldExplane = new JLabel("Interval");
+        toggleExplane = new JLabel("Toggle/Momentary");
         inputArea = new IntervalInputArea();
         toggleSwitch = new ToggleOrMomentary();
         leftClickToggle = new AutoClickToggle(false);
@@ -59,4 +64,3 @@ public class UiManager implements ModeChangerRegistable{
     }
 
 }
-

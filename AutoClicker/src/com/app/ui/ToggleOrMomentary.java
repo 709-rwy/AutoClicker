@@ -1,3 +1,9 @@
+/**
+ * Toggle/Momentaryを変更するためのToggleスイッチ用のクラス
+ * ToggleモードではTabキーを一度押したらクリック開始、再度押したらクリック終了
+ * MomenaryモードではTabキーを押している間だけクリックを行う。
+ */
+
 package com.app.ui;
 
 import java.awt.event.ItemEvent;

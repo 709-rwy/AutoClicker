@@ -1,3 +1,9 @@
+/**
+ * アプリの状態の変更操作を受け取り、
+ * その記録とAutoClickerへの操作を行うクラス
+ * 
+ */
+
 package com.app.controller;
 
 import com.app.ui.UiManager;
@@ -15,7 +21,7 @@ public class ModeChanger {
     private AutoClicker autoClicker;
 
     public ModeChanger(){
-        triggerKey = NativeKeyEvent.VC_TAB;//仮に設定
+        triggerKey = NativeKeyEvent.VC_TAB;
     }
 
     public void acceptTriggerKeyPressed(){
@@ -43,10 +49,12 @@ public class ModeChanger {
         clickerIsRunning = false;
     }
 
+    //IntervalInputAreaの入力を受け付けるためにこのメソッドをAppManager,UiManagerを通じて渡す
     public void setInterval(int interval){
         this.interval = interval;
     }
 
+    
     public void setClickerIsRunning(boolean clickerIsRunning){
         this.clickerIsRunning = clickerIsRunning;
     }

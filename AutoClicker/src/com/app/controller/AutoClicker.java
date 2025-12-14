@@ -1,3 +1,8 @@
+/**
+ *ModeChangerからアプリの状態の変更を受け取って、オートクリックを行うクラスです。
+ *オートクリックを前提として作られたアプリなのでクリック専用のクラスをRobotクラスの継承により作りました。
+ */
+
 package com.app.controller;
 
 import java.awt.Robot;
@@ -17,6 +22,7 @@ public class AutoClicker extends Robot implements ModeChangerRegistable{
     }
 
     void startClick(){
+        //ユーザーの入力、Tabキーの入力を受け付けるためクリッカーの動作は別スレッドで行う。
         this.clickerThread = new Thread(this::run);
         clickerThread.start();
     }
@@ -43,6 +49,7 @@ public class AutoClicker extends Robot implements ModeChangerRegistable{
             try{
                 Thread.sleep(interval);
             }catch(InterruptedException e){
+                // スレッド割り込み時はクリック処理を停止する
                 modeChanger.stopClicker();
             }
         }

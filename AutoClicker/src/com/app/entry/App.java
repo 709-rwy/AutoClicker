@@ -1,3 +1,7 @@
+/**
+ * アプリのエントリークラス
+ */
+
 package com.app.entry;
 
 import com.app.manager.AppManager;

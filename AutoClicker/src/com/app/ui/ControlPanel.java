@@ -1,3 +1,8 @@
+/**
+ * アプリの設定画面用のパネルクラス
+ * IntervalInputAreaとToggleOrMomentaryを追加することを想定している。
+ */
+
 package com.app.ui;
 
 import javax.swing.JPanel;

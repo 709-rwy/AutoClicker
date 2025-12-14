@@ -1,3 +1,8 @@
+/**
+ * アプリのui関連以外のオブジェクトを生成し、委譲関係を作成して連携させるためのクラス。
+ * uiに関しては別にuiManagerを作ったので委譲する。
+ */
+
 package com.app.manager;
 
 import com.app.ui.UiManager;

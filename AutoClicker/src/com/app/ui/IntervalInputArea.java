@@ -1,3 +1,8 @@
+/**
+ * オートクリックのクリック間隔を設定するためのテキストフィールド
+ * [0-9]のみの入力のみをうけつけ、整数に変換してModeChangerに値を渡す
+ */
+
 package com.app.ui;
 
 import javax.swing.JTextField;

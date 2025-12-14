@@ -1,3 +1,7 @@
+/**
+ * アプリ全体のフレーム
+ */
+
 package com.app.ui;
 
 import javax.swing.JFrame;

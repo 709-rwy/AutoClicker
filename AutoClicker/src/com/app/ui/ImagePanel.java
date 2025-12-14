@@ -1,3 +1,8 @@
+/**
+ * マウスの画像を配置し、
+ * その上にそれぞれのマウスボタンをクリックするかを配置するためのパネルクラス。
+ */
+
 package com.app.ui;
 
 import javax.swing.JPanel;

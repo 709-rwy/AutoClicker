@@ -1,3 +1,9 @@
+/**
+ * JanativeHookを用いてTabキーの入力を監視し
+ * ModeChangerにTabキーが押された、離されたという情報をおくるクラス。
+ */
+
+
 package com.app.controller;
 
 import com.github.kwhat.jnativehook.GlobalScreen;
