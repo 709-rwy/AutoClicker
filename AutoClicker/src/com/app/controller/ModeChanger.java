@@ -11,12 +11,12 @@ import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 
 public class ModeChanger {
 
-    private int interval;//setter & getter
-    private int triggerKey;//setter & getter
-    private boolean isMomentary;//setter & getter
-    private boolean rightClickIsValid;//setter & getter
-    private boolean leftClickIsValid;//setter & getter
-    private boolean clickerIsRunning;//getter
+    private int interval;
+    private int triggerKey;
+    private boolean isMomentary;
+    private boolean rightClickIsValid;
+    private boolean leftClickIsValid;
+    private boolean clickerIsRunning;
 
     private AutoClicker autoClicker;
 
@@ -24,6 +24,7 @@ public class ModeChanger {
         triggerKey = NativeKeyEvent.VC_TAB;
     }
 
+    //KeyLisnerに渡してオートクリッカーの制御を行わせるためのメソッド
     public void acceptTriggerKeyPressed(){
         if(clickerIsRunning && (!isMomentary)){
             stopClicker();
@@ -109,3 +110,4 @@ public class ModeChanger {
 
 
 }
+
