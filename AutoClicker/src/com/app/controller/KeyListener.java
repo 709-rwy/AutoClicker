@@ -15,12 +15,15 @@ import java.util.logging.Level;
 
 public class KeyListener implements NativeKeyListener, ModeChangerRegistable{
 
+    //JNativeHookは数字でキーを管理しているためこちらも同様に
+    //0はKEY_LOCATION_UNKNOWNに割り当てられているので、押されていない状態は-1で表す。
     int pressedKey;
 
     ModeChanger modeChanger;
 
 
     public KeyListener() throws NativeHookException{
+        //JNativeHookからのログをなくす
         Logger logger = Logger.getLogger(GlobalScreen.class.getPackageName());
         logger.setLevel(Level.OFF);
 
@@ -37,6 +40,8 @@ public class KeyListener implements NativeKeyListener, ModeChangerRegistable{
 
     @Override
     public void nativeKeyPressed(NativeKeyEvent e){
+        //キーが押されている間は繰り返しこのメソッドが実行されるため、
+        //キーの押しはじめのみを取得するためにpressdeKey == -1をフラグにする
         if(pressedKey == -1){
             pressedKey = e.getKeyCode();
             if(e.getKeyCode() == modeChanger.getTriggerKey()){
@@ -47,9 +52,12 @@ public class KeyListener implements NativeKeyListener, ModeChangerRegistable{
 
     @Override
     public void nativeKeyReleased(NativeKeyEvent e){
+        //キーを二つ以上押している間に片方のキーを話すとどのキーを話したかがわからないので
+        //e.getKeyCode() == pressedKeyで管理
         if(e.getKeyCode() == pressedKey){
             pressedKey = -1;
             modeChanger.acceptTriggerKeyReleased();
         }
     }
 }
+
