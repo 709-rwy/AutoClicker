@@ -1,6 +1,6 @@
 /**
- *ModeChangerからアプリの状態の変更を受け取って、オートクリックを行うクラスです。
- *オートクリックを前提として作られたアプリなのでクリック専用のクラスをRobotクラスの継承により作りました。
+ *ModeChangerからアプリの状態の変更を受け取って、オートクリックを行うクラス。
+ *オートクリックを前提として作られたアプリなのでクリック専用のクラスをRobotクラスの継承により作った。
  */
 
 package com.app.controller;
@@ -67,4 +67,5 @@ public class AutoClicker extends Robot implements ModeChangerRegistable{
 
 
 }
+
 
